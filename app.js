@@ -2,13 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const RESPONES = require("./fixtures");
 
-console.log(1, RESPONES)
-
-const users = {
-	name: "vasya",
-	age: 21,
-};
-
 const app = express();
 app.use(
 	cors({
@@ -40,11 +33,15 @@ app.post("/dictionary", (req, res) => {
 	res.send(RESPONES.dictionary);
 });
 
-app.post("/customer/chatHistory", (req, res) => {
-	res.send();
+app.post("/history", (req, res) => {
+	res.send(RESPONES.history);
 });
 app.post("/register", (req, res) => {
 	res.send(RESPONES.register
+    );
+});
+app.post("/auth", (req, res) => {
+	res.send({"errorCode":-1}
     );
 });
 app.post("/sendPreview", (req, res) => {
