@@ -36,7 +36,7 @@ app.post("/dictionary", (req, res) => {
 app.post("/history", (req, res) => {
 	res.send(RESPONES.history);
 });
-app.post("/register", (req, res) => {
+app.post("/registerV2", (req, res) => {
 	res.send(RESPONES.register
     );
 });
