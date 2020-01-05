@@ -1,9 +1,12 @@
 const express = require('express');
 const cors = require('cors');
-const RESPONES = require('./fixtures');
+const RESPONES = require('../fixtures');
 const visits = require('./tempData');
-const uuid = require('uuid/v1')
+const uuid = require('uuid/v1');
 const app = express();
+
+import { Request, Response } from 'express';
+
 app.use(
 	cors({
 		credentials: true
@@ -14,17 +17,17 @@ app.use(express.json());
 
 app.listen(3000, () => console.log('working server!'));
 
-app.get('/', (req, res) => {
+app.get('/', (req: Request, res: Response) => {
 	res.send('express is send!');
 });
 
-app.get('/visits', (req, res) => {
+app.get('/visits', (req: Request, res: Response) => {
 	res.send(visits.visits);
 });
-app.post('/newvisit', (req, res) => {
+app.post('/newvisit', (req: Request, res: Response) => {
 	console.log(req.body);
 	const newId = uuid();
-	const newVisitWithId = {...req.body, visitId: newId}
+	const newVisitWithId = { ...req.body, visitId: newId };
 	res.send(newVisitWithId);
 });
 
