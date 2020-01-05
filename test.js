@@ -1,9 +1,26 @@
-const m = new Map([
-    [1, 'hell'],
-    [2, 'hell2'],
+const bloodTest = {
+    testId: 'blood test',
+	title: 'blood test'
+};
 
-])
-const aaa = Array.from(m, v => v)
-const arr = () => [4,2]
-const [key, val] = arr()
-key
+const urinTest = {
+    testId: 'urine test',
+	title: 'urine test'
+};
+const cardiography = {
+    testId: 'cardiography',
+	title: 'cardiography'
+};
+const fluorography = {
+    testId: 'fluorography',
+	title: 'fluorography'
+};
+
+const carDrivingLicenseTest = {
+	bloodTest,
+	cardiography,
+	urinTest,
+	fluorography
+};
+
+module.exports = { carDrivingLicenseTest };

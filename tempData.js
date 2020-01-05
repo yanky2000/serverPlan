@@ -1,3 +1,4 @@
+
 const dumpAddress = {
 	email: 'some@mail.ru',
 	phone: 1234,
@@ -8,6 +9,42 @@ const dumpAddress = {
 		address: 'Pokrovka 21-14'
 	}
 };
+const narcologist = {
+	doctorId: 'oculist1',
+	firstName: 'Ivan',
+	lastName: 'Sidorov',
+	specialization: ['narcologist'],
+	title: 'MD',
+	gender: 'Male',
+	contacts: dumpAddress
+};
+const neurologist = {
+	doctorId: 'oculist1',
+	firstName: 'Maria',
+	lastName: 'Johnson',
+	specialization: ['neurologist'],
+	title: 'MD',
+	gender: 'Female',
+	contacts: dumpAddress
+};
+const psychiatrist = {
+	doctorId: 'oculist1',
+	firstName: 'Sergey',
+	lastName: 'Petrov',
+	specialization: ['psychiatrist'],
+	title: 'MD',
+	gender: 'Male',
+	contacts: dumpAddress
+};
+const oculist = {
+	doctorId: 'oculist1',
+	firstName: 'Sergey',
+	lastName: 'Petrov',
+	specialization: ['oculist'],
+	title: 'MD',
+	gender: 'Male',
+	contacts: dumpAddress
+}
 
 const doctor = {
 	doctorId: 'firstDoc',
@@ -18,7 +55,12 @@ const doctor = {
 	gender: 'Male',
 	contacts: dumpAddress
 };
-
+// терапевт;
+// офтальмолог (глазной);
+// психиатр;
+// нарколог;
+// невропатолог;
+// гинеколог (для водителей женского пола).
 const clinic = {
 	clinicId: 'firstClinic',
 	title: 'Best Clinic in the World',
@@ -30,7 +72,7 @@ const visits = {
 		visitId: 'visit1',
 		title: 'visit to dentist one',
 		patiendId: 'patient1',
-		date: '30/07/19',
+		date: '2020-01-06',
 		doctor: doctor,
 		clinic: clinic,
 		time: '12:00',
