@@ -1,3 +1,4 @@
+import {IDoctor, IClinic} from '../../medPlan/src/models'
 
 const dumpAddress = {
 	email: 'some@mail.ru',
@@ -9,7 +10,7 @@ const dumpAddress = {
 		address: 'Pokrovka 21-14'
 	}
 };
-const narcologist = {
+const narcologist:IDoctor  = {
 	doctorId: 'oculist1',
 	firstName: 'Ivan',
 	lastName: 'Sidorov',
@@ -18,7 +19,7 @@ const narcologist = {
 	gender: 'Male',
 	contacts: dumpAddress
 };
-const neurologist = {
+const neurologist:IDoctor = {
 	doctorId: 'oculist1',
 	firstName: 'Maria',
 	lastName: 'Johnson',
@@ -27,7 +28,7 @@ const neurologist = {
 	gender: 'Female',
 	contacts: dumpAddress
 };
-const psychiatrist = {
+const psychiatrist:IDoctor = {
 	doctorId: 'oculist1',
 	firstName: 'Sergey',
 	lastName: 'Petrov',
@@ -36,7 +37,7 @@ const psychiatrist = {
 	gender: 'Male',
 	contacts: dumpAddress
 };
-const oculist = {
+const oculist:IDoctor = {
 	doctorId: 'oculist1',
 	firstName: 'Sergey',
 	lastName: 'Petrov',
@@ -46,7 +47,7 @@ const oculist = {
 	contacts: dumpAddress
 }
 
-const doctor = {
+const doctor:IDoctor = {
 	doctorId: 'firstDoc',
 	firstName: 'Ivan',
 	lastName: 'Morozov',
@@ -55,13 +56,8 @@ const doctor = {
 	gender: 'Male',
 	contacts: dumpAddress
 };
-// терапевт;
-// офтальмолог (глазной);
-// психиатр;
-// нарколог;
-// невропатолог;
-// гинеколог (для водителей женского пола).
-const clinic = {
+
+const clinic: IClinic = {
 	clinicId: 'firstClinic',
 	title: 'Best Clinic in the World',
 	contacts: dumpAddress
@@ -99,3 +95,4 @@ const visits = {
 };
 
 module.exports = { visits };
+ 

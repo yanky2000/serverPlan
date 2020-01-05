@@ -6,7 +6,7 @@ import {
 	IHashMap,
 	IPatient,
 	IVisitResult
-} from './models';
+} from '../../medPlan/src/models';
 
 const ids = {
 	patient1: 'patient1',
