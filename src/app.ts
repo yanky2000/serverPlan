@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const RESPONES = require('../fixtures');
-const visits = require('./tempData');
+import {visits, doctors, clinics} from './tempData';
 const uuid = require('uuid/v1');
 const app = express();
 
@@ -22,7 +22,7 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.get('/visits', (req: Request, res: Response) => {
-	res.send(visits.visits);
+	res.send(visits);
 });
 app.post('/newvisit', (req: Request, res: Response) => {
 	console.log(req.body);
@@ -31,6 +31,20 @@ app.post('/newvisit', (req: Request, res: Response) => {
 	res.send(newVisitWithId);
 });
 
+app.get('/doctors', (req: Request, res: Response) => {
+	res.send(doctors);
+});
+app.get('/adddoctors', (req: Request, res: Response) => {
+	console.log('adding doc', req.body)
+	res.send(req.body);
+});
+app.get('/clinics', (req: Request, res: Response) => {
+	res.send(clinics);
+});
+app.get('/addclinic', (req: Request, res: Response) => {
+	console.log('adding clinic', req.body)
+	res.send(req.body);
+});
 // app.post('/parametersV2', (req, res) => {
 // 	res.set();
 // 	res.send(
