@@ -1,8 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const RESPONES = require('../fixtures');
-import {visits, doctors, clinics} from './tempData';
+import { visits, doctors, clinics } from './tempData';
 const uuid = require('uuid/v1');
+const fileUpload = require('express-fileupload');
 const app = express();
 
 import { Request, Response } from 'express';
@@ -14,7 +15,11 @@ app.use(
 );
 app.use(express.urlencoded());
 app.use(express.json());
-
+app.use(
+	fileUpload({
+		createParentPath: true
+	})
+);
 app.listen(3000, () => console.log('working server!'));
 
 app.get('/', (req: Request, res: Response) => {
@@ -35,15 +40,19 @@ app.get('/doctors', (req: Request, res: Response) => {
 	res.send(doctors);
 });
 app.get('/adddoctors', (req: Request, res: Response) => {
-	console.log('adding doc', req.body)
+	console.log('adding doc', req.body);
 	res.send(req.body);
 });
 app.get('/clinics', (req: Request, res: Response) => {
 	res.send(clinics);
 });
 app.get('/addclinic', (req: Request, res: Response) => {
-	console.log('adding clinic', req.body)
+	console.log('adding clinic', req.body);
 	res.send(req.body);
+});
+app.post('/addfile', (req: any, res: Response) => {
+	console.log(req.files.file);
+	res.send(req.files.file);
 });
 // app.post('/parametersV2', (req, res) => {
 // 	res.set();
