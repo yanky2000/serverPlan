@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const RESPONES = require('../fixtures');
-import { visits, doctors, clinics } from './tempData';
+import { visits, doctors, clinics, User1 } from './tempData';
 const uuid = require('uuid/v1');
 const fileUpload = require('express-fileupload');
 const app = express();
@@ -39,10 +39,11 @@ app.post('/newvisit', (req: Request, res: Response) => {
 app.get('/doctors', (req: Request, res: Response) => {
 	res.send(doctors);
 });
-app.get('/adddoctors', (req: Request, res: Response) => {
+app.get('/adddoctor', (req: Request, res: Response) => {
 	console.log('adding doc', req.body);
 	res.send(req.body);
 });
+
 app.get('/clinics', (req: Request, res: Response) => {
 	res.send(clinics);
 });
@@ -54,42 +55,10 @@ app.post('/addfile', (req: any, res: Response) => {
 	console.log(req.files.file);
 	res.send(req.files.file);
 });
-// app.post('/parametersV2', (req, res) => {
-// 	res.set();
-// 	res.send(
-// 		RESPONES.paramsV2
-// 		// {
-// 		// corporate: { parameters: { key: "CHAT_ENABLE", value: "true" } },
-// 		// }
-// 	);
-// });
-
-// app.post('/fields', (req, res) => {
-// 	res.set();
-// 	res.send(RESPONES.fields);
-// });
-// app.post('/dictionary', (req, res) => {
-// 	res.set();
-// 	res.send(RESPONES.dictionary);
-// });
-
-// app.post('/history', (req, res) => {
-// 	res.send(RESPONES.history);
-// });
-// app.post('/registerV2', (req, res) => {
-// 	res.send(RESPONES.register);
-// });
-// app.post('/auth', (req, res) => {
-// 	res.send({ errorCode: -1 });
-// });
-// app.post('/sendPreview', (req, res) => {
-// 	res.send();
-// });
-// // app.post("/sessionsV2/read", (req, res) => {
-// // res.send(RESPONES.read);
-// // res.end()
-// //     res.set("Connection", "close");
-// // });
-// app.post('/sessionsV2/subscribe', (req, res) => {
-// 	res.send();
-// });
+app.get('/userData', (req: any, res: Response) => {
+	res.send(User1);
+});
+app.post('/adduser', (req: any, res: Response) => {
+	console.log('adding user', req.body)
+	res.send(req.body);
+});

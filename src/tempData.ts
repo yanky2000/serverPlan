@@ -1,4 +1,4 @@
-import { IDoctor, IClinic } from '../../medPlan/src/models';
+import { IDoctor, IClinic, IUser } from '../../medPlan/src/models';
 
 const dumpAddress = {
 	email: 'some@mail.ru',
@@ -82,7 +82,7 @@ const clinic2: IClinic = {
 export const clinics = {
 	clinic1: clinic,
 	clinic2: clinic2
-}
+};
 export const visits = {
 	visit1: {
 		visitId: 'visit1',
@@ -112,4 +112,13 @@ export const visits = {
 	// 		prescriptions: 'stay home for 3 days'
 	// 	}
 	// }
+};
+export const User1: IUser = {
+	userId: 'user1',
+	firstName: 'Ivan',
+	lastName: 'Petrov',
+	login: 'Petrov1',
+	gender: 'Male',
+	password: '1234',
+	contacts: dumpAddress 
 };
