@@ -7,7 +7,7 @@ const dumpAddress = {
 		country: 'Russia',
 		city: 'Moscow',
 		zipCode: 123456,
-		address: 'Pokrovka 21-14'
+		street: 'Pokrovka 21-14'
 	}
 };
 const narcologist: IDoctor = {
