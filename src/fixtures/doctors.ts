@@ -9,7 +9,7 @@ export const narcologist: IDoctor = {
   specialization: ['narcologist'],
   title: 'MD',
   gender: 'Male',
-  contacts: dumpAddress,
+  // contacts: dumpAddress,
   clinicIds: ['clinic1'],
 };
 export const neurologist: IDoctor = {
@@ -19,7 +19,7 @@ export const neurologist: IDoctor = {
   specialization: ['neurologist'],
   title: 'MD',
   gender: 'Female',
-  contacts: dumpAddress,
+  // contacts: dumpAddress,
   clinicIds: ['clinic1'],
 };
 export const psychiatrist: IDoctor = {
@@ -29,7 +29,7 @@ export const psychiatrist: IDoctor = {
   specialization: ['psychiatrist'],
   title: 'MD',
   gender: 'Male',
-  contacts: dumpAddress,
+  // contacts: dumpAddress,
   clinicIds: ['clinic1'],
 };
 export const oculist: IDoctor = {
@@ -39,7 +39,7 @@ export const oculist: IDoctor = {
   specialization: ['oculist'],
   title: 'MD',
   gender: 'Male',
-  contacts: dumpAddress,
+  // contacts: dumpAddress,
   clinicIds: ['clinic3'],
 };
 
@@ -50,7 +50,7 @@ export const physician: IDoctor = {
   specialization: ['physician'],
   title: 'MD',
   gender: 'Male',
-  contacts: dumpAddress,
+  // contacts: dumpAddress,
   clinicIds: ['clinic2'],
 };
 

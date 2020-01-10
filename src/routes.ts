@@ -1,3 +1,4 @@
+import { Doctor } from './models/doctorModels';
 import { User1 } from './fixtures/users';
 import { clinics } from './fixtures/clinics';
 import { doctors } from './fixtures/doctors';
@@ -22,9 +23,10 @@ router.post('/newvisit', (req: Request, res: Response) => {
   res.send(newVisitWithId);
 });
 
-router.get('/doctors', (req: Request, res: Response) => {
-  console.log(doctors);
-  res.send(doctors);
+router.get('/doctors', async (req: Request, res: Response) => {
+  const ex = await Doctor.find();
+  console.log('findings', ex);
+  res.send(ex);
 });
 router.get('/adddoctor', (req: Request, res: Response) => {
   console.log('adding doc', req.body);

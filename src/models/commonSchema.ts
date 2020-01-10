@@ -1,7 +1,10 @@
-import mongoose from 'mongoose';
+import mongoose, { Schema, Document } from 'mongoose';
+import { IPerson } from '../../../medPlan/src/models';
 
 export const options = { discriminatorKey: 'kind' };
-const personSchema = new mongoose.Schema(
+
+export interface IPersonDoctor extends Document, IPerson {}
+const personSchema: Schema = new Schema(
   {
     //   doctorId: {
     //     type: String,
@@ -11,23 +14,26 @@ const personSchema = new mongoose.Schema(
     lastName: String,
     gender: {
       type: String,
-      enum: ['male', 'female'],
+      enum: ['Male', 'Female'],
     },
-    email: {
-      type: String,
-      unique: true,
-    },
-    phone: Number,
+    // email: {
+    //   type: String,
+    // },
+    // phone: Number,
     age: Number,
-    address: {
-      country: String,
-      city: String,
-      state: String,
-      street: String,
-      zipCode: Number,
-    },
+    // contacts: {
+    //   address: {
+    //     country: String,
+    //     city: String,
+    //     state: String,
+    //     street: String,
+    //     zipCode: Number,
+    //   },
+    //   phone: Number,
+    //   email: String,
+    // },
   },
   options
 );
 
-export const Person = mongoose.model('Doctor', personSchema);
+export const Person = mongoose.model('Person', personSchema);
