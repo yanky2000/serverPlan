@@ -10,7 +10,7 @@ export const narcologist: IDoctor = {
   title: 'MD',
   gender: 'Male',
   contacts: dumpAddress,
-  clinic: wmemorial,
+  clinicIds: ['clinic1'],
 };
 export const neurologist: IDoctor = {
   doctorId: 'doc4',
@@ -19,9 +19,8 @@ export const neurologist: IDoctor = {
   specialization: ['neurologist'],
   title: 'MD',
   gender: 'Female',
-  some: 23,
   contacts: dumpAddress,
-  clinic: clinic1,
+  clinicIds: ['clinic1'],
 };
 export const psychiatrist: IDoctor = {
   doctorId: 'doc3',
@@ -31,7 +30,7 @@ export const psychiatrist: IDoctor = {
   title: 'MD',
   gender: 'Male',
   contacts: dumpAddress,
-  clinic: clinic2,
+  clinicIds: ['clinic1'],
 };
 export const oculist: IDoctor = {
   doctorId: 'doc2',
@@ -41,7 +40,7 @@ export const oculist: IDoctor = {
   title: 'MD',
   gender: 'Male',
   contacts: dumpAddress,
-  clinic: wmemorial,
+  clinicIds: ['clinic3'],
 };
 
 export const physician: IDoctor = {
@@ -51,9 +50,8 @@ export const physician: IDoctor = {
   specialization: ['physician'],
   title: 'MD',
   gender: 'Male',
-  age: 35,
   contacts: dumpAddress,
-  clinic: clinic2,
+  clinicIds: ['clinic2'],
 };
 
 export const doctors: IHashMap<IDoctor> = {

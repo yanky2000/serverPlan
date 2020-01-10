@@ -1,18 +1,33 @@
+import { Doctor } from './models/doctorModels';
 import express from 'express';
 import cors from 'cors';
 import fileUpload from 'express-fileupload';
 import mongoose from 'mongoose';
 import { router } from './routes';
 require('dotenv').config();
+import models, { connectDb } from './models';
+import { doctors } from './fixtures/doctors';
 
 const app = express();
+const eraseDatabaseOnSync = true;
 
-mongoose.connect('mongodb://localhost/subscribers', { useNewUrlParser: true });
+connectDb().then(async () => {
+  if (eraseDatabaseOnSync) {
+    await Promise.all([
+      Doctor.deleteMany({}),
+      // .Message.deleteMany({}),
+    ]);
+  }
 
-const db = mongoose.connection;
-db.on('error', error => console.error(error));
-db.once('open', () => console.log('connected to database'));
+  createDoctors();
 
+  app.listen(process.env.PORT, () =>
+    console.log(`Example app listening on port ${process.env.PORT}!`)
+  );
+});
+async function createDoctors() {
+  const docs = doctors.map(doc => new Doctor({ ...doc }));
+}
 app.use(
   cors({
     credentials: true,
