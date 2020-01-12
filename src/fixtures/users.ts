@@ -6,7 +6,10 @@ export const User1: IUser = {
   firstName: 'Ivan',
   lastName: 'Petrov',
   login: 'Petrov1',
-  gender: 'Male',
   password: '1234',
-  contacts: dumpAddress,
+  gender: 'Male',
+  contacts: {
+    email: 'goodemail@mail.ru',
+    phone: 79159134134,
+  },
 };

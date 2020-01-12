@@ -1,38 +1,36 @@
-import {
-  narcologist,
-  neurologist,
-  psychiatrist,
-  oculist,
-  physician,
-} from './doctors';
 import { dumpAddress } from './address';
 import { IClinic } from '../../../medPlan/src/models';
 
 export const clinic1: IClinic = {
-  clinicId: 'clinic1',
+  uid: 'clinic1',
   title: 'Best Clinic in the ld',
-  contacts: dumpAddress,
-  doctors: [narcologist, neurologist],
+  address: dumpAddress,
+  doctors: ['doc1', 'doc2'],
+  contacts: {
+    email: 'haaa@geners.com',
+    phone: 123456,
+  },
 };
 
 export const clinic2: IClinic = {
-  clinicId: 'clinic2',
+  uid: 'clinic2',
   title: 'good clinic',
+  address: dumpAddress,
+  doctors: ['doc1', 'doc2'],
   contacts: {
-    ...dumpAddress,
-    address: dumpAddress.address,
+    email: 'goodl@gene.com',
+    phone: 123234456,
   },
-  doctors: [psychiatrist, physician],
 };
 export const wmemorial: IClinic = {
-  clinicId: 'clinic3',
+  uid: 'clinic3',
   title: 'Washington Memorial clinic',
+  address: dumpAddress,
+  doctors: [],
   contacts: {
-    email: 'aomw@do.com',
-    phone: 12341234,
-    // address: { ...dumpAddress.address, city: 'Washington DC', street: "Loughboro Rd NW" },
+    email: 'memorial@geners.com',
+    phone: 123456234234,
   },
-  doctors: [oculist],
 };
 
 export const clinics = {

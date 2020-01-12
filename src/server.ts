@@ -7,8 +7,10 @@ import mongoose from 'mongoose';
 import { router } from './routes';
 // require('dotenv').config();
 import { connectDb } from './models';
-import { doctors, physician } from './fixtures/doctors';
+import { doctors, physician, docs } from './fixtures/doctors';
 import { IDoctor } from '../../medPlan/src/models';
+import { Clinic } from './models/clinicModel';
+import { wmemorial, clinics } from './fixtures/clinics';
 
 const app = express();
 const eraseDatabaseOnSync = true;
@@ -17,16 +19,10 @@ connectDb().then(async () => {
   const re = await Doctor.find();
   console.log('doctors', re);
   if (eraseDatabaseOnSync) {
-    Promise.all([Doctor.deleteMany({}), Person.deleteMany({})]);
+    Promise.all([Doctor.deleteMany({}), Clinic.deleteMany({})]);
   }
 
   createDoctors();
-
-  const peps = await Person.find();
-  console.log('peps', peps);
-
-  const persons = await Person.find();
-  console.log('people', persons);
 
   app.listen(process.env.PORT, () =>
     console.log(`Example app listening on port ${process.env.PORT}!`)
@@ -35,13 +31,10 @@ connectDb().then(async () => {
 
 async function createDoctors() {
   try {
-    // let docs = [];
-    // for (const doc of Object.values(doctors)) {
-    //   docs.push(new Doctor(doc));
-    //   // docs.push(new Person(doc));
-    //   docs.forEach(async doc => await doc.save());
-    // }
-    const ex = new Doctor(physician);
+    const clinic = new Clinic(wmemorial);
+    await clinic.save()
+    
+    const ex = new Doctor({...physician, clinics: [clinic.id]});
     await ex.save();
   } catch (err) {
     console.log(err);

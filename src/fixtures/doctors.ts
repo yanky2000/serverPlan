@@ -3,55 +3,53 @@ import { dumpAddress } from './address';
 import { IDoctor, IHashMap } from '../../../medPlan/src/models';
 
 export const narcologist: IDoctor = {
-  doctorId: 'doc5',
+  uid: 'doc5',
   firstName: 'Ivan',
   lastName: 'Sidorov',
-  specialization: ['narcologist'],
+  specialization: 'narcologist',
   title: 'MD',
   gender: 'Male',
-  // contacts: dumpAddress,
-  clinicIds: ['clinic1'],
+  clinics: ['clinic1'],
 };
 export const neurologist: IDoctor = {
-  doctorId: 'doc4',
+  uid: 'doc4',
   firstName: 'Maria',
   lastName: 'Johnson',
-  specialization: ['neurologist'],
+  specialization: 'neurologist',
   title: 'MD',
   gender: 'Female',
   // contacts: dumpAddress,
-  clinicIds: ['clinic1'],
+  clinics: ['clinic1'],
 };
 export const psychiatrist: IDoctor = {
-  doctorId: 'doc3',
+  uid: 'doc3',
   firstName: 'Sergey',
   lastName: 'Petrov',
-  specialization: ['psychiatrist'],
+  specialization: 'psychiatrist',
   title: 'MD',
   gender: 'Male',
-  // contacts: dumpAddress,
-  clinicIds: ['clinic1'],
+  clinics: ['clinic1'],
 };
 export const oculist: IDoctor = {
-  doctorId: 'doc2',
+  uid: 'doc2',
   firstName: 'Sergey',
   lastName: 'Petrov',
-  specialization: ['oculist'],
+  specialization: 'oculist',
   title: 'MD',
   gender: 'Male',
   // contacts: dumpAddress,
-  clinicIds: ['clinic3'],
+  clinics: ['clinic3'],
 };
 
 export const physician: IDoctor = {
-  doctorId: 'doc1',
+  uid: 'doc1',
   firstName: 'Александр',
   lastName: 'Крюков',
-  specialization: ['physician'],
+  specialization: 'physician',
   title: 'MD',
   gender: 'Male',
   // contacts: dumpAddress,
-  clinicIds: ['clinic2'],
+  clinics: [],
 };
 
 export const doctors: IHashMap<IDoctor> = {
@@ -61,3 +59,4 @@ export const doctors: IHashMap<IDoctor> = {
   doc4: neurologist,
   doc5: narcologist,
 };
+export const docs = [physician, oculist, psychiatrist, neurologist, narcologist]
