@@ -1,7 +1,7 @@
-import { Clinic } from './models/clinicModel';
-import { Visit } from './models/visitModel';
-import { Doctor } from './models/doctorModels';
-import { User1 } from './fixtures/users';
+import { Clinic } from '../models/clinicModel';
+import { Visit } from '../models/visitModel';
+import { Doctor } from '../models/doctorModels';
+import { User1 } from '../fixtures/users';
 import express, { Request } from 'express';
 import { Response } from 'express-serve-static-core';
 // import { visits } from './fixtures/visits';
@@ -9,7 +9,7 @@ import uuid from 'uuid/v1';
 
 export const router = express.Router();
 
-router.get('/', (req: Request, res: Response) => {
+router.get('/home', (req: Request, res: Response) => {
   res.send('express is send!');
 });
 

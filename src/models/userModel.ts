@@ -7,7 +7,7 @@ const userSchema = new Schema(
     login: {
       type: String,
       unique: true,
-      required: true,
+      // required: true,
     },
     password: String,
     contacts: ContactsSchema,
