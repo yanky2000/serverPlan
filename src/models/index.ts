@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import { Doctor } from './doctorModels';
 import 'dotenv/config';
 
 const connectDb = () => {

@@ -1,9 +1,10 @@
+import { DOCTOR } from './../constants';
 import mongoose from 'mongoose';
 import { options, Person } from './commonSchema';
 import { CLINIC } from '../constants';
 
 export const Doctor = Person.discriminator(
-  'Doctor',
+  DOCTOR,
   new mongoose.Schema(
     {
       title: String,

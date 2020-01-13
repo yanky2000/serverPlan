@@ -1,5 +1,5 @@
+import { PERSON } from './../constants';
 import mongoose, { Schema, Document } from 'mongoose';
-import { IPerson } from '../../../medPlan/src/models';
 
 export const options = { discriminatorKey: 'kind' };
 
@@ -14,13 +14,12 @@ export const ContactsSchema = {
   phone: Number,
   email: {
     type: String,
-    unique: true,
+    // unique: true,
     match: [/.+@.+\..+/, 'Please enter a valid e-mail address'],
   },
 };
-export interface IPersonDoctor extends Document, IPerson {}
 
-const personSchema: Schema<IPersonDoctor> = new Schema(
+const personSchema = new Schema(
   {
     firstName: String,
     lastName: String,
@@ -29,9 +28,9 @@ const personSchema: Schema<IPersonDoctor> = new Schema(
       enum: ['Male', 'Female'],
     },
     address: AddressSchema,
-    contacts: ContactsSchema,
+    // contacts: ContactsSchema,
   },
   options
 );
 
-export const Person = mongoose.model('Person', personSchema);
+export const Person = mongoose.model(PERSON, personSchema);

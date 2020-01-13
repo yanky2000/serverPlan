@@ -1,10 +1,10 @@
+import { Clinic } from './models/clinicModel';
+import { Visit } from './models/visitModel';
 import { Doctor } from './models/doctorModels';
 import { User1 } from './fixtures/users';
-import { clinics } from './fixtures/clinics';
-import { doctors } from './fixtures/doctors';
 import express, { Request } from 'express';
 import { Response } from 'express-serve-static-core';
-import { visits } from './fixtures/visits';
+// import { visits } from './fixtures/visits';
 import uuid from 'uuid/v1';
 
 export const router = express.Router();
@@ -13,7 +13,9 @@ router.get('/', (req: Request, res: Response) => {
   res.send('express is send!');
 });
 
-router.get('/visits', (req: Request, res: Response) => {
+router.get('/visits', async (req: Request, res: Response) => {
+  const visits = await Visit.find();
+  console.log('visits', visits);
   res.send(visits);
 });
 router.post('/newvisit', (req: Request, res: Response) => {
@@ -24,16 +26,17 @@ router.post('/newvisit', (req: Request, res: Response) => {
 });
 
 router.get('/doctors', async (req: Request, res: Response) => {
-  const ex = await Doctor.find();
-  console.log('findings', ex);
-  res.send(ex);
+  const doctors = await Doctor.find();
+  console.log('findings', doctors);
+  res.send(doctors);
 });
 router.get('/adddoctor', (req: Request, res: Response) => {
   console.log('adding doc', req.body);
   res.send(req.body);
 });
 
-router.get('/clinics', (req: Request, res: Response) => {
+router.get('/clinics', async (req: Request, res: Response) => {
+  const clinics = await Clinic.find();
   res.send(clinics);
 });
 router.get('/addclinic', (req: Request, res: Response) => {

@@ -1,5 +1,3 @@
-import { clinic2, wmemorial, clinic1 } from './clinics';
-import { dumpAddress } from './address';
 import { IDoctor, IHashMap } from '../../../medPlan/src/models';
 
 export const narcologist: IDoctor = {
@@ -59,4 +57,10 @@ export const doctors: IHashMap<IDoctor> = {
   doc4: neurologist,
   doc5: narcologist,
 };
-export const docs = [physician, oculist, psychiatrist, neurologist, narcologist]
+export const docs = [
+  physician,
+  oculist,
+  psychiatrist,
+  neurologist,
+  narcologist,
+];

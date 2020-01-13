@@ -1,15 +1,20 @@
-import { dumpAddress } from './address';
 import { IUser } from '../../../medPlan/src/models';
 
 export const User1: IUser = {
-  userId: 'user1',
+  uid: 'user1',
   firstName: 'Ivan',
   lastName: 'Petrov',
-  login: 'Petrov1',
+  login: 'Petrov77',
   password: '1234',
   gender: 'Male',
   contacts: {
-    email: 'goodemail@mail.ru',
-    phone: 79159134134,
+    email: 'goail@mail.ru',
+    phone: 7915913,
+  },
+  address: {
+    country: 'Russia',
+    city: 'Moscow',
+    zipCode: 123456,
+    street: 'Pokrovka 1-1',
   },
 };
