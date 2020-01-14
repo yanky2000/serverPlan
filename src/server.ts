@@ -30,7 +30,6 @@ connectDb().then(async () => {
       Clinic.deleteMany({}),
       Visit.deleteMany({}),
       Result.deleteMany({}),
-      User.deleteMany({}),
     ]);
   }
 

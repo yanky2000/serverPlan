@@ -13,14 +13,12 @@ router.get('/', (req: Request, res: Response) => {
 
 router.get('/visits', async (req: Request, res: Response) => {
   const visits = await Visit.find();
-  console.log('visits', visits);
   res.send(visits);
 });
 router.post('/newvisit', createVisit);
 
 router.get('/doctors', async (req: Request, res: Response) => {
   const doctors = await Doctor.find();
-  console.log('findings', doctors);
   res.send(doctors);
 });
 router.get('/adddoctor', (req: Request, res: Response) => {
@@ -42,7 +40,6 @@ router.post('/addfile', (req: any, res: Response) => {
 });
 router.get('/userData', async (req: any, res: Response) => {
   const user = await User.find();
-  console.log('user', user);
   res.send(user);
 });
 router.post('/adduser', (req: any, res: Response) => {
