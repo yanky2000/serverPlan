@@ -23,12 +23,13 @@ const personSchema = new Schema(
   {
     firstName: String,
     lastName: String,
+    fullName: String,
     gender: {
       type: String,
       enum: ['Male', 'Female'],
     },
     address: AddressSchema,
-    // contacts: ContactsSchema,
+    contacts: ContactsSchema,
   },
   options
 );

@@ -1,7 +1,7 @@
 import { dumpAddress } from './address';
-import { IClinic } from '../../../medPlan/src/models';
+import { IClinic, INoId } from '../../../medPlan/src/models';
 
-export const clinic1: IClinic = {
+export const clinic1: INoId<IClinic> = {
   uid: 'clinic1',
   title: 'Best Clinic in the ld',
   address: dumpAddress,
@@ -12,7 +12,7 @@ export const clinic1: IClinic = {
   },
 };
 
-export const clinic2: IClinic = {
+export const clinic2: INoId<IClinic> = {
   uid: 'clinic2',
   title: 'good clinic',
   address: dumpAddress,
@@ -22,7 +22,7 @@ export const clinic2: IClinic = {
     phone: 123234456,
   },
 };
-export const wmemorial: IClinic = {
+export const wmemorial: INoId<IClinic> = {
   uid: 'clinic3',
   title: 'Washington Memorial clinic',
   address: dumpAddress,

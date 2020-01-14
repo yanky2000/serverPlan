@@ -1,12 +1,9 @@
+import express, { Request, Response } from 'express';
 import { User } from './../models/userModel';
 import { Clinic } from '../models/clinicModel';
 import { Visit } from '../models/visitModel';
 import { Doctor } from '../models/doctorModels';
-import { User1 } from '../fixtures/users';
-import express, { Request } from 'express';
-import { Response } from 'express-serve-static-core';
-// import { visits } from './fixtures/visits';
-import uuid from 'uuid/v1';
+import { createVisit } from '../controllers/visit.controller';
 
 export const router = express.Router();
 
@@ -19,12 +16,7 @@ router.get('/visits', async (req: Request, res: Response) => {
   console.log('visits', visits);
   res.send(visits);
 });
-router.post('/newvisit', (req: Request, res: Response) => {
-  console.log(req.body);
-  const newId = uuid();
-  const newVisitWithId = { ...req.body, visitId: newId };
-  res.send(newVisitWithId);
-});
+router.post('/newvisit', createVisit);
 
 router.get('/doctors', async (req: Request, res: Response) => {
   const doctors = await Doctor.find();

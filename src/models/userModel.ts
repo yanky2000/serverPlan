@@ -11,7 +11,6 @@ const userSchema = new Schema(
       // required: true,
     },
     password: String,
-    contacts: ContactsSchema,
     // userData?: any;
     visits: [{ type: Schema.Types.ObjectId, ref: VISIT }],
     // results: [{ type: Schema.Types.ObjectId, ref: RESULT }],
