@@ -1,3 +1,4 @@
+import { User } from './../models/userModel';
 import { Clinic } from '../models/clinicModel';
 import { Visit } from '../models/visitModel';
 import { Doctor } from '../models/doctorModels';
@@ -9,7 +10,7 @@ import uuid from 'uuid/v1';
 
 export const router = express.Router();
 
-router.get('/home', (req: Request, res: Response) => {
+router.get('/', (req: Request, res: Response) => {
   res.send('express is send!');
 });
 
@@ -47,8 +48,10 @@ router.post('/addfile', (req: any, res: Response) => {
   console.log(req.files.file);
   res.send(req.files.file);
 });
-router.get('/userData', (req: any, res: Response) => {
-  res.send(User1);
+router.get('/userData', async (req: any, res: Response) => {
+  const user = await User.find();
+  console.log('user', user);
+  res.send(user);
 });
 router.post('/adduser', (req: any, res: Response) => {
   console.log('adding user', req.body);

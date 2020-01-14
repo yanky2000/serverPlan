@@ -4,9 +4,9 @@ import { AddressSchema, ContactsSchema } from './commonSchema';
 
 export const ClinicSchema = new Schema({
   title: String,
-  doctors: [{ type: Schema.Types.ObjectId, ref: DOCTOR }],
+  // doctors: [{ type: Schema.Types.ObjectId, ref: DOCTOR }],
   address: AddressSchema,
   contacts: ContactsSchema,
 });
 
-export const Clinic = model(CLINIC, ClinicSchema) 
+export const Clinic = model(CLINIC, ClinicSchema);

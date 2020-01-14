@@ -1,4 +1,3 @@
-import { User1 } from '../fixtures/users';
 import { User } from '../models/userModel';
 import passport from 'passport';
 import dotenv from 'dotenv';
@@ -27,7 +26,7 @@ passport.use(
     function(accessToken, refreshToken, profile, done) {
       const { email, first_name, last_name } = profile._json;
       const userData = {
-        email,
+        contacts: { email: email },
         firstName: first_name,
         lastName: last_name,
       };

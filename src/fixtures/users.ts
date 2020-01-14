@@ -1,7 +1,8 @@
 import { IUser } from '../../../medPlan/src/models';
 
-export const User1: IUser = {
-  uid: 'user1',
+// export const User1: IUser = {
+export const User1 = {
+  // _id: 'user1',
   firstName: 'Ivan',
   lastName: 'Petrov',
   login: 'Petrov77',
@@ -17,4 +18,6 @@ export const User1: IUser = {
     zipCode: 123456,
     street: 'Pokrovka 1-1',
   },
+  visits: [],
+  results: [],
 };

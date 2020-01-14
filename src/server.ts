@@ -61,27 +61,31 @@ app.use(
     createParentPath: true,
   })
 );
-app.use('/', userRouter);
+// app.use('/', userRouter);
 app.use('/', router);
 
 async function createInitData() {
   try {
-    // const user = new User(User1);
-    // await user.save();
-    // const clinic = new Clinic(wmemorial);
-    // await clinic.save();
-    // const doctor = new Doctor({ ...physician, clinics: [clinic.id] });
-    // await doctor.save();
-    // const result = new Result(result1);
-    // await result.save();
-    // const visit = new Visit({
-    //   ...visit1,
-    //   user: [user.id],
-    //   doctor: [doctor.id],
-    //   clinic: [clinic.id],
-    //   results: [[result.id]],
-    // });
-    // await visit.save();
+    const clinic = new Clinic(wmemorial);
+    await clinic.save();
+
+    const doctor = new Doctor({ ...physician, clinics: [clinic.id] });
+    await doctor.save();
+
+    const result = new Result(result1);
+    await result.save();
+
+    const visit = new Visit({
+      ...visit1,
+      // user: [user.id],
+      doctor: [doctor.id],
+      clinic: [clinic.id],
+      results: [[result.id]],
+    });
+    await visit.save();
+
+    const user = new User({ ...User1, visits: [visit.id] });
+    await user.save();
   } catch (err) {
     console.log(err);
   }

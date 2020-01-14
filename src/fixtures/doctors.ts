@@ -39,7 +39,8 @@ export const oculist: IDoctor = {
   clinics: ['clinic3'],
 };
 
-export const physician: IDoctor = {
+// export const physician: IDoctor = {
+export const physician = {
   uid: 'doc1',
   firstName: 'Александр',
   lastName: 'Крюков',
@@ -51,7 +52,7 @@ export const physician: IDoctor = {
 };
 
 export const doctors: IHashMap<IDoctor> = {
-  doc1: physician,
+  // doc1: physician,
   doc2: oculist,
   doc3: psychiatrist,
   doc4: neurologist,

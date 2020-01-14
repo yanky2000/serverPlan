@@ -6,7 +6,7 @@ import { options } from './commonSchema';
 export const VisitSchema = new Schema(
   {
     title: String,
-    user: { type: mongoose.Schema.Types.ObjectId, ref: USER },
+    // user: { type: mongoose.Schema.Types.ObjectId, ref: USER },
     doctor: { type: mongoose.Schema.Types.ObjectId, ref: DOCTOR },
     date: Date,
     time: String,
