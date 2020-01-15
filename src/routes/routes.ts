@@ -5,6 +5,7 @@ import { Visit } from '../models/visitModel';
 import { Doctor } from '../models/doctorModels';
 import { createVisit } from '../controllers/visit.controller';
 import { createDoctor } from '../controllers/doctor.controller';
+import { createClinic } from '../controllers/clinic.controller';
 
 export const router = express.Router();
 
@@ -29,10 +30,9 @@ router.get('/clinics', async (req: Request, res: Response) => {
   const clinics = await Clinic.find();
   res.send(clinics);
 });
-router.get('/addclinic', (req: Request, res: Response) => {
-  console.log('adding clinic', req.body);
-  res.send(req.body);
-});
+
+router.post('/addclinic', createClinic);
+
 router.post('/addfile', (req: any, res: Response) => {
   console.log(req.files.file);
   res.send(req.files.file);
