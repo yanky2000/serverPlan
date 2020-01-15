@@ -1,4 +1,4 @@
-import { IUser } from '../../../medPlan/src/models';
+import { IUser } from '../../../medPlan/src/types/models';
 
 // export const User1: IUser = {
 export const User1 = {

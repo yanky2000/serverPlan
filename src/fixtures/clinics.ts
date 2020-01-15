@@ -1,5 +1,5 @@
 import { dumpAddress } from './address';
-import { IClinic, INoId } from '../../../medPlan/src/models';
+import { IClinic, INoId } from '../../../medPlan/src/types/models';
 
 export const clinic1: INoId<IClinic> = {
   uid: 'clinic1',

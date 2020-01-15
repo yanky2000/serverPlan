@@ -1,4 +1,4 @@
-import { IDoctor, INoId } from '../../../medPlan/src/models';
+import { IDoctor, INoId } from '../../../medPlan/src/types/models';
 
 export const narcologist: INoId<IDoctor> = {
   // _id: 'doc5',

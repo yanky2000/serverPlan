@@ -1,4 +1,4 @@
-import { IVisit } from '../../../medPlan/src/models';
+import { IVisit } from '../../../medPlan/src/types/models';
 
 export const visit1 = {
   title: 'visit to dentist one',

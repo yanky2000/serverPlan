@@ -9,7 +9,7 @@ export const Doctor = Person.discriminator(
     {
       title: String,
       specialization: String, // TODO: Change to ids?
-      // clinics: [{ type: mongoose.Schema.Types.ObjectId, ref: CLINIC }],
+      clinics: [{ type: mongoose.Schema.Types.ObjectId, ref: CLINIC }],
     },
     options
   )
