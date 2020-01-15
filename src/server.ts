@@ -21,9 +21,6 @@ const app = express();
 const eraseDatabaseOnSync = true;
 
 connectDb().then(async () => {
-  // const re = await Doctor.find();
-  // const users = await User.find();
-  // const clinics = await Clinic.find();
   if (eraseDatabaseOnSync) {
     Promise.all([
       Person.deleteMany({}),
